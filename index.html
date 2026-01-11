@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Happy Birthday Karthik 🎂</title>
-  <p"Happy Birthday software engineer 🎂💻
-You debug problems like a pro, build dreams line by line, and still manage to be amazing every day.
-May your code compile on the first run and your life be full of success, happiness." p>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Confetti Library -->
+  <!-- Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #ffe6f0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,52 +21,65 @@ May your code compile on the first run and your life be full of success, happine
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 20px;
+      padding: 24px;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 92%;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       text-align: center;
-      max-width: 350px;
-      width: 90%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+    .subtitle {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 90px;
       object-fit: cover;
-      margin: 15px 0;
-      border: 4px solid #ff4d6d;
-    }
-
-    p {
-      font-size: 16px;
-      margin: 10px 0;
+      border-radius: 10px;
     }
 
     button {
-      background: #ff4d6d;
+      background: #4f46e5;
       color: white;
       border: none;
-      padding: 12px 18px;
-      border-radius: 25px;
-      font-size: 15px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 14px;
       cursor: pointer;
-      margin-top: 15px;
+      margin-top: 12px;
     }
 
     button:hover {
-      background: #e63b5c;
+      background: #4338ca;
     }
 
-    #secret {
+    #message {
       display: none;
-      margin-top: 15px;
-      font-size: 15px;
+      margin-top: 14px;
+      font-size: 14px;
       color: #333;
+    }
+
+    .signature {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
     }
   </style>
 </head>
@@ -77,43 +87,52 @@ May your code compile on the first run and your life be full of success, happine
 
   <div class="card">
     <h1>🎂 Happy Birthday Karthik 🎂</h1>
-
-    <!-- Replace this image URL later -->
-    <img src="karthick.png">
-
-    <p>You are my favorite software engineer 💻❤️</p>
-    <p>May your code compile on first run and your life be full of happiness ✨</p>
-
-    <button onclick="showLove()">Click for my message ❤️</button>
-
-    <div id="secret">
-      💌 I’m so proud of you and grateful to have you in my life.  
-      You inspire me every day. Always keep shining 🌟
+    <div class="subtitle">
+      Wishing you success, good health, and great code always 💻
     </div>
 
-    <!-- Music -->
-    <audio id="music" autoplay loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- Photo Gallery -->
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61" />
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" />
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+    </div>
+
+    <button onclick="showMessage()">Read Message</button>
+
+    <div id="message">
+      May your ideas keep growing, your skills keep sharpening,  
+      and your journey in tech take you exactly where you want to go.  
+      Keep building great things 🚀
+    </div>
+
+    <div class="signature">
+      — From Divya
+    </div>
+
+    <!-- Background Music (soft instrumental) -->
+    <audio id="music" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
     </audio>
   </div>
 
   <script>
     // Confetti on load
     confetti({
-      particleCount: 200,
-      spread: 70,
+      particleCount: 180,
+      spread: 80,
       origin: { y: 0.6 }
     });
 
-    function showLove() {
-      document.getElementById("secret").style.display = "block";
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+      document.getElementById("music").play();
       confetti({
-        particleCount: 150,
-        spread: 100
+        particleCount: 120,
+        spread: 90
       });
     }
   </script>
 
 </body>
 </html>
-
